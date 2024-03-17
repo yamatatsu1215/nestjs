@@ -1,0 +1,13 @@
+services:
+  db:
+    image: postgres:13
+    ports:
+      - "5432:5444"  # ホストマシンのポート:コンテナ内のポート
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: backend
+    networks:
+      - backend-network
+networks:
+  backend-network:
